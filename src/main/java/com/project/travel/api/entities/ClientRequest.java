@@ -1,6 +1,6 @@
 package com.project.travel.api.entities;
 
-import java.util.Calendar;
+import com.project.travel.api.DTO.ClientRequestDTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,20 +18,27 @@ public class ClientRequest {
 		private String destinationLocal;
 		private String departureLocal;
 		private int peopleNumber;
-		private Calendar traveldate;
+		private String traveldate;
 		
 		public ClientRequest () {
 			
 		}
 
 		public ClientRequest(Long id, String destinationLocal, String departureLocal, Integer peopleNumber,
-				Calendar traveldate) {
+				String traveldate) {
 			super();
 			this.id = id;
 			this.destinationLocal = destinationLocal;
 			this.departureLocal = departureLocal;
 			this.peopleNumber = peopleNumber;
 			this.traveldate = traveldate;
+		}
+
+		public ClientRequest(ClientRequestDTO clientRequestDTO) {
+			this.destinationLocal = clientRequestDTO.getDestinationLocal();
+			this.departureLocal = clientRequestDTO.getDepartureLocal();
+			this.peopleNumber = clientRequestDTO.getPeopleNumber();
+			this.traveldate =  clientRequestDTO.getTraveldate();
 		}
 
 		public Long getId() {
@@ -66,11 +73,11 @@ public class ClientRequest {
 			this.peopleNumber = peopleNumber;
 		}
 
-		public Calendar getTraveldate() {
+		public String getTraveldate() {
 			return traveldate;
 		}
 
-		public void setTraveldate(Calendar traveldate) {
+		public void setTraveldate(String traveldate) {
 			this.traveldate = traveldate;
 		}
 		
