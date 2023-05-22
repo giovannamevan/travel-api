@@ -10,6 +10,8 @@ import com.project.travel.api.DTO.ClientRequestDTO;
 import com.project.travel.api.entities.ClientRequest;
 import com.project.travel.api.repositories.ClientRequestRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("clients")
 public class ClientRequestController {
@@ -19,7 +21,7 @@ public class ClientRequestController {
 		
 		@PostMapping
 		@Transactional
-		public void postRequest(@RequestBody ClientRequestDTO clientRequestDTO) {
+		public void postRequest(@RequestBody @Valid ClientRequestDTO clientRequestDTO) {
 			clientRequestRepository.save(new ClientRequest(clientRequestDTO));
 		}
 }
