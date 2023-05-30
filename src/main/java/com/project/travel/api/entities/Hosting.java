@@ -36,6 +36,41 @@ public class Hosting implements Serializable{
 		@Column(length = 800)
 		private String description;
 		private int dailyPrice;
+		
+		public Long getHostingId() {
+			return HostingId;
+		}
+		public void setHostingId(Long hostingId) {
+			HostingId = hostingId;
+		}
+		public String getHostingName() {
+			return hostingName;
+		}
+		public void setHostingName(String hostingName) {
+			this.hostingName = hostingName;
+		}
+		public Place getHostingLocal() {
+			return hostingLocal;
+		}
+		public void setHostingLocal(Place hostingLocal) {
+			this.hostingLocal = hostingLocal;
+		}
+		public String getDescription() {
+			return description;
+		}
+		public void setDescription(String description) {
+			this.description = description;
+		}
+		public int getDailyPrice() {
+			return dailyPrice;
+		}
+		public void setDailyPrice(int dailyPrice) {
+			this.dailyPrice = dailyPrice;
+		}
+		public static long getSerialversionuid() {
+			return serialVersionUID;
+		}
 	
+		
 		
 }
