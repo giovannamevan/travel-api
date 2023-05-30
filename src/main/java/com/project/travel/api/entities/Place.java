@@ -29,17 +29,16 @@ public class Place implements Serializable{
 		private String city;
 		private String country;
 		
+		@OneToMany(mappedBy = "hostingLocal", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+		@JsonManagedReference
+		private Set<Hosting> hostings = new HashSet<>();
+		
 		@OneToMany(mappedBy = "destinationLocal", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
 		@JsonManagedReference
 		private Set<Ticket> tickets = new HashSet<>();
 		
 		
-		@OneToMany(mappedBy = "local", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
-		@JsonManagedReference
-		private Set<Hosting> hostings = new HashSet<>();
-		
-		
-		@OneToMany(mappedBy = "local", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+		@OneToMany(mappedBy = "tourLocal", cascade=CascadeType.ALL, fetch = FetchType.LAZY)
 		@JsonManagedReference
 		private Set<Tour> tours = new HashSet<>();
 		
