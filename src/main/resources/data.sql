@@ -4,25 +4,25 @@ INSERT INTO tb_places (place_id, city, country) VALUES (3, 'Salvador', 'Brasil')
 INSERT INTO tb_places (place_id, city, country) VALUES (4, 'Recife', 'Brasil');
 INSERT INTO tb_places (place_id, city, country) VALUES (5, 'Curitiba', 'Brasil');
 
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (1, '07-06-2023','Uberlândia', 714.00, 1);
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (2, '10-06-2023','Uberlândia', 870.08, 1);
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (3, '12-06-2023','Uberlândia', 833.90, 1);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (1,'LATAM', '07-06-2023','Uberlândia', 714.00, 1);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (2,'GOL', '10-06-2023','Uberlândia', 870.08, 1);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (3,'LATAM', '12-06-2023','Uberlândia', 833.90, 1);
 
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (4, '07-06-2023','Uberlândia', 983.90, 2);
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (5, '08-06-2023','Uberlândia', 1003.90, 2);
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (6, '12-06-2023','Uberlândia', 820.90, 2);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (4,'GOL', '07-06-2023','Uberlândia', 983.90, 2);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (5,'GOL', '08-06-2023','Uberlândia', 1003.90, 2);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (6,'LATAM', '12-06-2023','Uberlândia', 820.90, 2);
 
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (7, '07-06-2023','Uberlândia', 783.40, 3);
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (8, '12-06-2023','Uberlândia', 873.80, 3);
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (9, '08-06-2023','Uberlândia', 741.10, 3);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (7,'AZUL', '07-06-2023','Uberlândia', 783.40, 3);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (8,'LATAM', '12-06-2023','Uberlândia', 873.80, 3);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (9,'AZUL', '08-06-2023','Uberlândia', 741.10, 3);
 
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (10, '11-06-2023','Uberlândia', 933.90, 4);
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (11, '09-06-2023','Uberlândia', 734.00, 4);
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (12, '07-06-2023','Uberlândia', 820.00, 4);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (10,'GOL', '11-06-2023','Uberlândia', 933.90, 4);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (11,'GOL', '09-06-2023','Uberlândia', 734.00, 4);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (12,'LATAM', '07-06-2023','Uberlândia', 820.00, 4);
 
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (13, '10-06-2023','Uberlândia', 230.41, 5);
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (14, '11-06-2023','Uberlândia', 473.00, 5);
-INSERT INTO tb_tickets (ticket_id, departion_date, origin_local, ticket_price, place_id) VALUES (15, '09-06-2023','Uberlândia', 341.50, 5);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (13,'AZUL', '10-06-2023','Uberlândia', 230.41, 5);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (14,'GOL', '11-06-2023','Uberlândia', 473.00, 5);
+INSERT INTO tb_tickets (ticket_id, company_name, departion_date, origin_local, ticket_price, place_id) VALUES (15,'LATAM', '09-06-2023','Uberlândia', 341.50, 5);
 
 
 INSERT INTO tb_hostings (hosting_id, hosting_name, place_id, description, daily_price) VALUES (1, 'Copacabana Palace', 1, 'Hotel 5 estrelas localizado em frente à Praia de Copacabana', 2500.00);

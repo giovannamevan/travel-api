@@ -38,6 +38,9 @@ public class Ticket implements Serializable{
 		private Place destinationLocal;
 		private String originLocal;
 		private BigDecimal ticketPrice;
+		private String companyName;
+		
+		
 		public Long getTicketId() {
 			return ticketId;
 		}
@@ -67,6 +70,14 @@ public class Ticket implements Serializable{
 		}
 		public void setTicketPrice(BigDecimal ticketPrice) {
 			this.ticketPrice = ticketPrice;
+		}
+		
+		
+		public String getCompanyName() {
+			return companyName;
+		}
+		public void setCompanyName(String companyName) {
+			this.companyName = companyName;
 		}
 		public static long getSerialversionuid() {
 			return serialVersionUID;

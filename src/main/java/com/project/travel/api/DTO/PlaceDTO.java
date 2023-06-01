@@ -1,5 +1,6 @@
 package com.project.travel.api.DTO;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import com.project.travel.api.entities.Tour;
@@ -88,5 +89,11 @@ public class PlaceDTO {
 	public void setTours(Set<Tour> tours) {
 		this.tours = tours;
 	}
+
+
+		
+
+
+	
 	  
 }
