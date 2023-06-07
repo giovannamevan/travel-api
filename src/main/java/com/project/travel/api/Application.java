@@ -13,7 +13,6 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 
-		// Após iniciar a aplicação Spring Boot, abrir a página HTML no navegador
 		abrirPaginaHTML();
 	}
 
