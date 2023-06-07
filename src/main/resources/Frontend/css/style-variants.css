@@ -1,0 +1,204 @@
+.caixa-main {
+    position: relative;
+    z-index: 1;
+    margin: -35px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #eaeaea;
+    background-color: white;
+    width: 14%;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+main > h1{
+    display: flex;
+    margin-top: 2.5%;
+    font-size: 25px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+form > h2 {
+    display: flex;
+    margin-top: 1%;
+    font-size: 35px;
+    font-weight: bold;
+    padding-left: 1.5%;
+    align-items: center;
+}
+
+.variants_hotels {
+    display: flex;
+    padding-left: 4%;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    justify-content: space-evenly;
+}
+
+.first-hotel, .second-hotel, .third-hotel {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    border: solid 1px #eaeaea;
+    border-radius: 120px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background-image: linear-gradient(to bottom,#f09819,#ff512f);
+    margin: 0.5% 0 0.5% 0;
+}
+
+.first-hotel-button, .second-hotel-button, .third-hotel-button {
+    display: flex;
+    justify-content: end;
+    width: 20%;
+    align-items: center;
+}
+
+.first-hotel-button > input, .second-hotel-button > input, .third-hotel-button > input {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    background-color: black;
+    accent-color: blue;
+}
+
+.first-hotel-imagem-texto, .second-hotel-imagem-texto, .third-hotel-imagem-texto {
+    display: flex;
+    justify-content: end;
+}
+
+.first-hotel-imagem-texto > h3, .second-hotel-imagem-texto > h4, .third-hotel-imagem-texto > h5 {
+    display: flex;
+    align-self: center;
+    text-align: end;
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
+    line-height: 95%;
+    justify-content: end;
+    padding: 2% 3% 2% 0;
+}
+
+.first-hotel-imagem-texto > img, .second-hotel-imagem-texto > img, .third-hotel-imagem-texto > img {
+    display: flex;
+    width: 35%;
+    border-top-right-radius: 120px;
+    border-bottom-right-radius: 120px;
+}
+
+form > h6 {
+    display: flex;
+    margin-top: 1%;
+    font-size: 35px;
+    font-weight: bold;
+    padding-left: 1.5%;
+    align-items: center;
+}
+
+.variants_hotspots {
+    display: flex;
+    padding-left: 4%;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    justify-content: space-evenly;
+}
+
+.first-hotspots, .second-hotspots, .third-hotspots {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    border: solid 1px #eaeaea;
+    border-radius: 120px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background-image: linear-gradient(to bottom,#f09819,#ff512f);
+    margin: 0.5% 0 0.5% 0;
+}
+
+.first-hotspots-button, .second-hotspots-button, .third-hotspots-button {
+    display: flex;
+    justify-content: end;
+    width: 20%;
+    align-items: center;
+}
+
+.first-hotspots-button > input, .second-hotspots-button > input, .third-hotspots-button > input {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    background-color: black;
+    accent-color: blue;
+}
+
+.first-hotspots-imagem-texto, .second-hotspots-imagem-texto, .third-hotspots-imagem-texto {
+    display: flex;
+    justify-content: end;
+}
+
+.first-hotspots-imagem-texto > h7, .second-hotspots-imagem-texto > h8, .third-hotspots-imagem-texto > h9 {
+    display: flex;
+    align-self: center;
+    text-align: end;
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
+    line-height: 95%;
+    justify-content: end;
+    padding: 2% 3% 2% 0;
+}
+
+.first-hotspots-imagem-texto > img, .second-hotspots-imagem-texto > img, .third-hotspots-imagem-texto > img {
+    display: flex;
+    width: 35%;
+    border-top-right-radius: 120px;
+    border-bottom-right-radius: 120px;
+}
+
+.botao-confirmar {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.botao-confirmar > button {
+    font-size: 37px;
+    color: white;
+    cursor: pointer;
+    border-radius: 40px;
+    border: 1px solid #36c000;
+    padding: 5px 45px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 1%;
+    letter-spacing: 2px;
+}
+
+.botao-confirmar > button {
+    background-color: #36c000;
+}
+
+.botao-confirmar > button:hover {
+    transform: scale(1.2);
+    transition: transform .2s;
+}
+
+footer {
+    background-color: #66A5FF;
+    padding: 10px 0;
+}
+
+
+.nomes {
+    margin-left: 1%;
+    color: white;
+    z-index: 10;
+}
+
+.nomes h3 {
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+.nomes p {
+    padding-bottom: 8px;
+}

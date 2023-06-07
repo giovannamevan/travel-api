@@ -1,0 +1,175 @@
+.caixa-main {
+    position: relative;
+    z-index: 1;
+    margin: -80px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #eaeaea;
+    background-color: white;
+    width: 35%;
+    border-radius: 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    padding: 0
+}
+
+.caixa-menor {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.caixa-menor > img {
+    display: flex;
+    width: 30%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.caixa-menor > p {
+    display: flex;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 150%;
+    text-align: left;
+    padding-left: 4%;
+}
+
+.caixa-cima {
+    display: flex;
+    width: 100%;
+    margin-top: 6%;
+    margin-bottom: 1%;
+    justify-content: space-between;
+}
+
+.caixa-baixo {
+    display: flex;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    justify-content: space-between;
+}
+
+.caixa-hotel, .caixa-passeio {
+    display: flex;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    width: 45%;
+    justify-content: space-between;
+    border-top-right-radius: 120px;
+    border-bottom-right-radius: 120px;
+}
+
+.texto-hotel, .texto-passeio {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    padding-left: 2%;
+}
+
+.texto-hotel > p, .texto-passeio > p {
+    display:flex;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 120%;
+    height: 100%;
+    align-items: center;
+}
+
+.texto-hotel > h1 {
+    display:flex;
+    font-size: 30px;
+    font-weight: bold;
+    color: gray;
+    line-height: 120%;
+    height: 100%;
+    align-items: center;
+}
+
+.texto-passeio > h1 {
+    display:flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+    line-height: 120%;
+    height: 100%;
+    align-items: center;
+}
+
+.caixa-hotel > img, .caixa-passeio > img {
+    display: flex;
+    width: 35%;
+    border-top-right-radius: 120px;
+    border-bottom-right-radius: 120px;
+}
+
+.caixa-logo {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 5%;
+}
+
+.caixa-logo > p {
+    display: flex;
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: end;
+    justify-content: center;
+}
+
+.caixa-logo > img {
+    display: flex;
+    width: 55%;
+    align-self: flex-end;
+}
+
+.caixa-finalizacao {
+    display: flex;
+    width: 45%;
+    margin-right: 5%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.caixa-finalizacao > p {
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+.botoes {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.botao-manter button, .botao-personalizar button {
+    font-size: 37px;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid #eaeaea;
+    padding: 15px 45px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 1%;
+}
+
+.botao-manter button {
+    background-color: #36c000;
+}
+
+.botao-personalizar button {
+    background-color: #f28a3f;
+}
+
+.botao-manter button:hover, .botao-personalizar button:hover {
+    transform: scale(1.2);
+    transition: transform .2s;
+}
+
+
