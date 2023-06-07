@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>FACOM Turismo - Variações</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style-all.css" />
+    <link rel="stylesheet" href="css/style-variants.css" />
+    <link rel="preconnect" href="css/https://fonts.googleapis.com" />
+    <link rel="preconnect" href="css/https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="caixa">
+        <h1>
+          <a href="home.html"><img src="img/FACOM C.png" /></a>
+        </h1>
+
+        <h2>FACOM Turismo</h2>
+      </div>
+    </header>
+
+    <main>
+      <img class="flight" src="img/Banner.png" />
+
+      <div class="caixa-main">
+        <p>Nossa sugestão</p>
+      </div>
+
+      <h1>Se você não se interessou nas nossas indicações, veja essas:</h1>
+
+      <form>
+        <h2>Hóteis</h2>
+
+        <div class="variants_hotels" id="radio_div">
+          <div class="first-hotel">
+            <div class="first-hotel-button">
+              <input type="radio" name="button-hotel" />
+            </div>
+            <div class="first-hotel-imagem-texto">
+              <h3>Grand Mercure Recife Boa Viagem</h3>
+              <img src="img/Grand Mercure Recife Boa Viagem.png" />
+            </div>
+          </div>
+
+          <div class="second-hotel">
+            <div class="second-hotel-button">
+              <input type="radio" name="button-hotel" />
+            </div>
+            <div class="second-hotel-imagem-texto">
+              <h4>Bahia Flat</h4>
+              <img src="img/Grand Mercure Recife Boa Viagem.png" />
+            </div>
+          </div>
+
+          <div class="third-hotel">
+            <div class="third-hotel-button">
+              <input type="radio" name="button-hotel" />
+            </div>
+            <div class="third-hotel-imagem-texto">
+              <h5>Grand Mercure Recife Boa Viagem</h5>
+              <img src="img/Grand Mercure Recife Boa Viagem.png" />
+            </div>
+          </div>
+        </div>
+
+        <h6>Passeios</h6>
+
+        <div class="variants_hotspots">
+          <div class="first-hotspots">
+            <div class="first-hotspots-button">
+              <input type="radio" name="button-hotspots" />
+            </div>
+            <div class="first-hotspots-imagem-texto">
+              <h7>Grand Mercure Recife Boa Viagem</h7>
+              <img src="img/Grand Mercure Recife Boa Viagem.png" />
+            </div>
+          </div>
+
+          <div class="second-hotspots">
+            <div class="second-hotspots-button">
+              <input type="radio" name="button-hotspots" />
+            </div>
+            <div class="second-hotspots-imagem-texto">
+              <h8>Bahia Flat</h8>
+              <img src="img/Grand Mercure Recife Boa Viagem.png" />
+            </div>
+          </div>
+
+          <div class="third-hotspots">
+            <div class="third-hotspots-button">
+              <input type="radio" name="button-hotspots" />
+            </div>
+            <div class="third-hotspots-imagem-texto">
+              <h9>Grand Mercure Recife Boa Viagem</h9>
+              <img src="img/Grand Mercure Recife Boa Viagem.png" />
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="botao-confirmar">
+        <button onclick="sendToRequest()">Confirmar</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="nomes">
+        <h3>Trabalho feito por:</h3>
+        <p>Isadora dos Reis Gonçalves (12021BSI243)</p>
+        <p>Giovanna Maria Alves Evangelista (12121BSI266)</p>
+        <p>Gabriel Freitas Santos (11821BSI264)</p>
+        <p>Henrick Oliveira de Souza (12121BSI237)</p>
+      </div>
+    </footer>
+
+    <script>
+      let data;
+      let selectedHotelId;
+      let selectedTourId;
+      let selectedHotel;
+      let selectedTour;
+      let rightTicket;
+      const urlParams = new URLSearchParams(window.location.search);
+      const place = decodeURIComponent(urlParams.get("place"));
+      const ticketId = decodeURIComponent(urlParams.get("ticket_id"));
+      const rightDate = decodeURIComponent(urlParams.get("date"));
+      const personQuantity = parseInt(
+        decodeURIComponent(urlParams.get("person_quantity"))
+      );
+      window.onload = async function () {
+        data = await buscarValoresAPI();
+        rightTicket = data.tickets.find(
+          (ticket) => ticket.ticketId == ticketId
+        );
+        updateRadioButtons(data);
+      };
+
+      function updateRadioButtons(dataApi) {
+        const hotelsContainer = document.querySelector(".variants_hotels");
+        const hotspotsContainer = document.querySelector(".variants_hotspots");
+
+        hotelsContainer.innerHTML = "";
+        hotspotsContainer.innerHTML = "";
+
+        if (dataApi && dataApi.hostings && dataApi.tours) {
+          const hotelClasses = ["first-hotel", "second-hotel", "third-hotel"];
+          const hotspotClasses = [
+            "first-hotspots",
+            "second-hotspots",
+            "third-hotspots",
+          ];
+
+          let firstHotelStyles = {};
+
+          dataApi.hostings.forEach((hotel, index) => {
+            const hotelDiv = document.createElement("div");
+            hotelDiv.classList.add(hotelClasses[index]);
+            hotelsContainer.appendChild(hotelDiv);
+
+            const hotelButtonDiv = document.createElement("div");
+            hotelButtonDiv.classList.add(`${hotelClasses[index]}-button`);
+            hotelDiv.appendChild(hotelButtonDiv);
+
+            const hotelRadio = document.createElement("input");
+            hotelRadio.type = "radio";
+            hotelRadio.name = "button-hotel";
+            hotelButtonDiv.appendChild(hotelRadio);
+
+            const hotelImagemTextoDiv = document.createElement("div");
+            hotelImagemTextoDiv.classList.add(
+              `${hotelClasses[index]}-imagem-texto`
+            );
+            hotelDiv.appendChild(hotelImagemTextoDiv);
+
+            const hotelNameHeading = document.createElement("h3");
+            hotelNameHeading.textContent = hotel.hostingName;
+            hotelImagemTextoDiv.appendChild(hotelNameHeading);
+
+            const hotelImage = document.createElement("img");
+            hotelImage.src = `img/${hotel.hostingName}.png`;
+            hotelImagemTextoDiv.appendChild(hotelImage);
+
+            if (index === 0) {
+              firstHotelStyles.fontFamily =
+                window.getComputedStyle(hotelNameHeading).fontFamily;
+              firstHotelStyles.fontSize =
+                window.getComputedStyle(hotelNameHeading).fontSize;
+              firstHotelStyles.fontWeight =
+                window.getComputedStyle(hotelNameHeading).fontWeight;
+              firstHotelStyles.color =
+                window.getComputedStyle(hotelNameHeading).color;
+            } else {
+              hotelNameHeading.style.fontFamily = firstHotelStyles.fontFamily;
+              hotelNameHeading.style.fontSize = firstHotelStyles.fontSize;
+              hotelNameHeading.style.fontWeight = firstHotelStyles.fontWeight;
+              hotelNameHeading.style.color = firstHotelStyles.color;
+            }
+
+            hotelDiv.addEventListener("click", function () {
+              selectedHotelId = hotel.hostingId;
+              hotelRadio.checked = true;
+            });
+          });
+
+          dataApi.tours.forEach((hotspot, index) => {
+            const hotspotDiv = document.createElement("div");
+            hotspotDiv.classList.add(hotspotClasses[index]);
+            hotspotsContainer.appendChild(hotspotDiv);
+
+            const hotspotButtonDiv = document.createElement("div");
+            hotspotButtonDiv.classList.add(`${hotspotClasses[index]}-button`);
+            hotspotDiv.appendChild(hotspotButtonDiv);
+
+            const hotspotRadio = document.createElement("input");
+            hotspotRadio.type = "radio";
+            hotspotRadio.name = "button-hotspots";
+            hotspotButtonDiv.appendChild(hotspotRadio);
+
+            const hotspotImagemTextoDiv = document.createElement("div");
+            hotspotImagemTextoDiv.classList.add(
+              `${hotspotClasses[index]}-imagem-texto`
+            );
+            hotspotDiv.appendChild(hotspotImagemTextoDiv);
+
+            const hotspotNameHeading = document.createElement("h3");
+            hotspotNameHeading.textContent = hotspot.tourName;
+            hotspotImagemTextoDiv.appendChild(hotspotNameHeading);
+
+            const hotspotImage = document.createElement("img");
+            hotspotImage.src = `img/${hotspot.tourName}.png`;
+            hotspotImagemTextoDiv.appendChild(hotspotImage);
+
+            hotspotNameHeading.style.fontFamily = firstHotelStyles.fontFamily;
+            hotspotNameHeading.style.fontSize = firstHotelStyles.fontSize;
+            hotspotNameHeading.style.fontWeight = firstHotelStyles.fontWeight;
+            hotspotNameHeading.style.color = firstHotelStyles.color;
+
+            hotspotDiv.addEventListener("click", function () {
+              selectedTourId = hotspot.tourId;
+              hotspotRadio.checked = true;
+            });
+          });
+        }
+      }
+
+      /*-------------------Pega Api-------------------------*/
+      async function buscarValoresAPI() {
+        event.preventDefault();
+        try {
+          const response = await fetch(
+            `http://localhost:3000/clients/all/${place}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error("Erro ao buscar os valores da API");
+          }
+          const apiData = await response.json();
+          return apiData;
+        } catch (error) {
+          return [];
+        }
+      }
+
+      async function postPedido(roteiroPronto) {
+        fetch("http://localhost:3000/clients/roteiro", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(roteiroPronto),
+        })
+          .then((response) => {
+            if (response.ok) {
+              console.log("Post realizado com sucesso!");
+            } else {
+              console.error("Erro ao realizar o post.");
+            }
+          })
+          .catch((error) => {
+            console.error("Erro:", error);
+          });
+      }
+      /*----------------------------------------------------*/
+
+      async function sendToRequest() {
+        if (selectedHotelId !== null && selectedTourId !== null) {
+          selectedTour = data.tours.find(
+            (tour) => tour.tourId == selectedTourId
+          );
+          selectedHotel = data.hostings.find(
+            (hotel) => hotel.hostingId == selectedHotelId
+          );
+          const valueToPay =
+            personQuantity *
+              (rightTicket.ticketPrice + selectedTour.ticketPrice) +
+            parseFloat(selectedHotel.dailyPrice);
+          const formattedValue = parseFloat(valueToPay.toFixed(2));
+          const roteiroFeito = {
+            departionDate: rightDate,
+            peopleNumber: personQuantity,
+            finalPrice: formattedValue,
+            localName: place,
+            hostingName: selectedHotel.hostingName,
+            hostingPrice: selectedHotel.dailyPrice,
+            tourName: selectedTour.tourName,
+            tourPrice: selectedTour.ticketPrice,
+            ticketPrice: rightTicket.ticketPrice,
+            ticketCompany: rightTicket.companyName,
+          };
+          await postPedido(roteiroFeito);
+          const baseUrl = window.location.href;
+          const url = new URL(baseUrl);
+          const pathname = url.pathname.replace(
+            "variants.html",
+            "client_request.html"
+          );
+
+          const params = new URLSearchParams();
+          params.set("place", place);
+          params.set("hotel_id", selectedHotelId);
+          params.set("tour_id", selectedTourId);
+          params.set("ticket_id", ticketId);
+          params.set("person_quantity", personQuantity);
+
+          const nextString = pathname + "?" + params.toString();
+          location.href = nextString;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>FACOM Turismo</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style-all.css" />
+    <link rel="stylesheet" href="css/style-sugestion.css" />
+    <link rel="preconnect" href="css/https://fonts.googleapis.com" />
+    <link rel="preconnect" href="css/https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="caixa">
+        <h1>
+          <a href="home.html"><img src="img/FACOM C.png" /></a>
+        </h1>
+
+        <h2>FACOM Turismo</h2>
+      </div>
+    </header>
+
+    <main>
+      <img class="flight" src="img/Banner.png" />
+
+      <div class="caixa-main">
+        <div class="caixa-menor">
+          <img src="img/Rota.png" />
+          <p>Eis um trecho que você pode se interessar:</p>
+        </div>
+      </div>
+
+      <div class="caixa-cima">
+        <div class="caixa-hotel">
+          <div class="texto-hotel">
+            <p id="hotel_title"></p>
+            <h1 id="hotel_description"></h1>
+          </div>
+          <img id="hotel_img" />
+        </div>
+
+        <div class="caixa-logo">
+          <p id="desc_trip">
+            Solicitadas passagens para XX pessoas na data dd/mm/aaaa.
+          </p>
+          <img id="company_name" />
+        </div>
+      </div>
+
+      <div class="caixa-baixo">
+        <div class="caixa-passeio">
+          <div class="texto-passeio" id="texto-passeio">
+            <p id="tour_title">Soul Hostel Av. Paulista</p>
+            <h1 id="tour_description">
+              e um sistema de transporte publico da cidade de Salvador, capital
+              do estado brasileiro da Bahia. Trata-se do primeiro elevador
+              urbano do mundo Soul Hostel Av. PaulistaSoul Hostel Av. Paulista.
+            </h1>
+          </div>
+          <img id="tour_img" />
+        </div>
+
+        <div class="caixa-finalizacao">
+          <div></div>
+          <p id="total_price">R$ XXX,XX</p>
+          <div class="botoes">
+            <div class="botao-manter">
+              <button onclick="retainSugestion()">Manter este trecho</button>
+            </div>
+            <div class="botao-personalizar">
+              <button onclick="alterSugestion()">Personalizar Viagem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="nomes">
+        <h3>Trabalho feito por:</h3>
+        <p>Isadora dos Reis Gonçalves (12021BSI243)</p>
+        <p>Giovanna Maria Alves Evangelista (12121BSI266)</p>
+        <p>Gabriel Freitas Santos (11821BSI264)</p>
+        <p>Henrick Oliveira de Souza (12121BSI237)</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const place = decodeURIComponent(urlParams.get("place"));
+  const date = decodeURIComponent(urlParams.get("date"));
+  const parts = date.split("-");
+  const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+  const personNumber = parseInt(
+    decodeURIComponent(urlParams.get("personNumber"))
+  );
+  let data;
+  let ticket_id;
+  async function pegaRoteiroSugerido() {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/clients/roadmap/${place}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Erro ao buscar os valores da API");
+      }
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  }
+  /*--------------chamada na pagina ------------------*/
+  window.onload = async function () {
+    data = await pegaRoteiroSugerido();
+    ticket_id = data.tickets[0].ticketId;
+    const valueToPay =
+      personNumber * (data.tickets[0].ticketPrice + data.tours[0].ticketPrice) +
+      data.hostings[0].dailyPrice;
+    document.getElementById("total_price").innerHTML = `R$ ${valueToPay.toFixed(
+      2
+    )}`;
+    document
+      .getElementById("tour_img")
+      .setAttribute("src", `img/${data.tours[0].tourName}.png`);
+    document
+      .getElementById("company_name")
+      .setAttribute("src", `img/${data.tickets[0].companyName}.png`);
+    document
+      .getElementById("hotel_img")
+      .setAttribute("src", `img/${data.hostings[0].hostingName}.png`);
+    document.getElementById("hotel_description").innerHTML =
+      data.hostings[0].description;
+    const hotelTitle = (document.getElementById("hotel_title").innerHTML =
+      data.hostings[0].hostingName);
+    const descTour = (document.getElementById("tour_description").innerHTML =
+      data.tours[0].description);
+    const tourTitle = (document.getElementById("tour_title").innerHTML =
+      data.tours[0].tourName);
+    const descTicket = (document.getElementById("company_name").innerHTML =
+      data.tickets[0].companyName);
+    const quantityTickets = (document.getElementById(
+      "desc_trip"
+    ).innerHTML = `Foram solicidadas passagens para ${personNumber} pessoa(s) na data ${formattedDate}`);
+    const priceTicket = (document.getElementById("ticket_price").innerHTML =
+      data.tickets[0].ticketPrice.toFixed(2) + " R$");
+  };
+  /*------------------------------------------------------*/
+  async function postPedido(roteiroPronto) {
+    fetch("http://localhost:3000/clients/roteiro", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(roteiroPronto),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Post realizado com sucesso!");
+        } else {
+          console.error("Erro ao realizar o post.");
+        }
+      })
+      .catch((error) => {
+        console.error("Erro:", error);
+      });
+  }
+  async function retainSugestion() {
+    const valueToPay =
+      personNumber * (data.tickets[0].ticketPrice + data.tours[0].ticketPrice) +
+      data.hostings[0].dailyPrice;
+    const place = decodeURIComponent(urlParams.get("place"));
+    const hotel_id = data.hostings[0].hostingId;
+    const tour_id = data.tours[0].tourId;
+    ticket_id = data.tickets[0].ticketId;
+    const baseUrl = window.location.href;
+    const dataToSend = {
+      departionDate: formattedDate,
+      peopleNumber: personNumber,
+      finalPrice: valueToPay,
+      localName: place,
+      hostingName: data.hostings[0].hostingName,
+      hostingPrice: data.hostings[0].dailyPrice,
+      tourName: data.tours[0].tourName,
+      tourPrice: data.tours[0].ticketPrice,
+      ticketPrice: data.tickets[0].ticketPrice,
+      ticketCompany: data.tickets[0].companyName,
+    };
+    await postPedido(dataToSend);
+    const newUrl = baseUrl
+      .substring(0, baseUrl.indexOf("?"))
+      .replace("/sugestion.html", "/client_request.html");
+    const nextString =
+      newUrl +
+      "?place=" +
+      encodeURIComponent(place) +
+      "&hotel_id=" +
+      encodeURIComponent(hotel_id) +
+      "&tour_id=" +
+      encodeURIComponent(tour_id) +
+      "&ticket_id=" +
+      encodeURIComponent(ticket_id) +
+      "&person_quantity=" +
+      encodeURIComponent(personNumber) +
+      "&full_price=" +
+      encodeURIComponent(valueToPay);
+
+    location.href = nextString;
+  }
+  async function alterSugestion() {
+    const baseUrl = window.location.href;
+    const newUrl = baseUrl
+      .substring(0, baseUrl.indexOf("?"))
+      .replace("/sugestion.html", "/variants.html");
+    const nextString =
+      newUrl +
+      "?place=" +
+      encodeURIComponent(place) +
+      "&person_quantity=" +
+      encodeURIComponent(personNumber) +
+      "&ticket_id=" +
+      encodeURIComponent(data.tickets[0].ticketId) +
+      "&date=" +
+      encodeURIComponent(formattedDate);
+
+    location.href = nextString;
+  }
+</script>

@@ -1,0 +1,58 @@
+body {
+    font-family: 'Comfortaa', cursive;
+}
+
+header {
+    background-color: #66A5FF;
+    padding: 10px 0;
+}
+
+.caixa {
+    width: 940px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+}
+
+.caixa img {
+    display: inline-block;
+    width: 3.5em;
+}
+
+.caixa h2 {
+    display: inline-block;
+	font-size: 50px;
+    font-weight: bold;
+    align-self: center;
+    margin: 0 auto;
+    color: white;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.flight {
+    width: 100%;
+}
+
+footer {
+    background-color: #66A5FF;
+    padding: 10px 0;
+}
+
+
+.nomes {
+    margin-left: 1%;
+    color: white;
+    z-index: 10;
+}
+
+.nomes h3 {
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+.nomes p {
+    padding-bottom: 8px;
+}

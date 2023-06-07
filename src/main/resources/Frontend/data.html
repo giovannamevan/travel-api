@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <title>Trabalho de POO</title>
+  </head>
+  <body>
+    <header class="menu-principal">
+      <main>
+        <div class="header-1">
+          <h1 class="titulo-principal">FACOM - Turismo</h1>
+          <style>
+            @import url("https://fonts.googleapis.com/css2?family=Slackside+One&display=swap");
+          </style>
+          <div class="logo">
+            <img src="./img/IHU.png" width="60px" height="60px" />
+          </div>
+        </div>
+      </main>
+    </header>
+    <h2 id="data-title">Os dados de uso nesse período são os seguintes:</h2>
+    <div class="basics_data_div">
+      <div class="first_data_div">
+        <p id="company_phrase_field">Aqui fica a Compania mais acessada</p>
+        <p id="data_phrase_field">Aqui fica a data preferida</p>
+      </div>
+      <div class="second_data_div">
+        <p id="city_phrase_field">Aqui fica a cidade mais visitada</p>
+        <p id="people_phrase_field">Aqui fica a qdt de pessoas</p>
+      </div>
+    </div>
+    <div class="revenue_div">
+      <p id="revenue_phrase_field">Aqui fica os lucros</p>
+    </div>
+  </body>
+</html>
+
+<script>
+  window.onload = async function () {
+    const dataApi = await buscarValoresAPI();
+    document.getElementById(
+      "company_phrase_field"
+    ).innerHTML = `A companhia mais acessada é a ${dataApi.mostTicketCompanyBought}`;
+    document.getElementById(
+      "data_phrase_field"
+    ).innerHTML = `A data mais requerida é a de ${dataApi.mostInsertedDate}`;
+    document.getElementById(
+      "city_phrase_field"
+    ).innerHTML = `A cidade mais requisitada é ${dataApi.mostVisitedCity}`;
+    document.getElementById("people_phrase_field").innerHTML = `${
+      dataApi.numPeople
+    } ${dataApi.numPeople == 1 ? "pessoa" : "pessoas"} já viajaram conosco`;
+    document.getElementById(
+      "revenue_phrase_field"
+    ).innerHTML = `O lucro obtido nesse período foi de ${dataApi.totalEarnings.toFixed(
+      2
+    )} R$`;
+  };
+
+  async function buscarValoresAPI() {
+    event.preventDefault();
+    try {
+      const response = await fetch(`http://localhost:3000/dados`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao buscar os valores da API");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      return [];
+    }
+  }
+</script>

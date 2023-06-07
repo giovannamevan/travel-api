@@ -1,0 +1,214 @@
+.caixa-gigante {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.caixa-main {
+    position: relative;
+    z-index: 1;
+    margin: -70px 0;
+    display: flex;
+    width: 50%;
+    background-color: white;
+    border-top-left-radius: 50px;
+}
+
+.caixa-main > p {
+    display: flex;
+    font-size: 53px;
+    width: 100%;
+    font-weight: bold;
+    padding: 2% 0 2% 4%;
+}
+
+.botao-voltar button {
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 1px solid #B6B6B6;
+    padding: 0px 45px;
+    margin-top: 3.2%;
+    margin-left: 1%;
+    background-color: #B6B6B6;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+
+.caixa-cima {
+    display: flex;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    justify-content: space-between;
+}
+
+.caixa-baixo {
+    display: flex;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    justify-content: space-between;
+}
+
+.caixa-hotel, .caixa-passeio {
+    display: flex;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    width: 45%;
+    justify-content: space-between;
+    border-top-right-radius: 120px;
+    border-bottom-right-radius: 120px;
+}
+
+.texto-hotel, .texto-passeio {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: left;
+    justify-content: center;
+    padding-left: 2%;
+}
+
+.texto-hotel > p, .texto-passeio > p {
+    display:flex;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 120%;
+    height: 100%;
+    align-items: center;
+}
+
+.texto-hotel > h1 {
+    display:flex;
+    font-size: 50px;
+    font-weight: bold;
+    color: gray;
+    line-height: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.texto-passeio > h1 {
+    display:flex;
+    font-size: 50px;
+    font-weight: bold;
+    color: gray;
+    line-height: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.caixa-hotel > img, .caixa-passeio > img {
+    display: flex;
+    width: 35%;
+    border-top-right-radius: 120px;
+    border-bottom-right-radius: 120px;
+}
+
+.caixa-preço {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-right: 2%;
+}
+
+.caixa-preço > p {
+    display: flex;
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: end;
+}
+
+.caixa-preço > h1 {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    text-align: end;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.caixa-finalizacao {
+    display: flex;
+    width: 45%;
+    margin-right: 1%;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 1px solid #B6B6B6;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    justify-content: space-evenly;
+}
+
+.caixa-finalizacao > p {
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1% 3% 0% 3%;
+    text-align: justify;
+}
+
+.botoes {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+
+.botao-telefone {
+    display: flex;
+    width: 50%;
+    border-radius: 20px;
+    border: 1px solid #eaeaea;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.botao-telefone input {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid #eaeaea;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.botao-enviar {
+    width: 30%;
+    border-radius: 20px;
+    padding: 15px 45px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: #97C7FF;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.botao-enviar button {
+    font-size: 30px;
+    color: white;
+    border: 1px solid #97C7FF;
+    cursor: pointer;
+    background-color: #97C7FF;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+ 
+.botao-enviar:hover {
+    transform: scale(1.2);
+    transition: transform .2s;
+}
+
+
