@@ -17,7 +17,7 @@ public class Application {
 	}
 
 	private static void abrirPaginaHTML() {
-		String htmlFilePath = "C:\\Users\\gaevangelista\\Desktop\\travel-api\\src\\main\\resources\\Frontend\\home.html";
+		String htmlFilePath = "C:\\Users\\gaevangelista\\Desktop\\app-viagens\\Arquivo da IDE\\App de viagens\\src\\main\\resources\\Frontend\\home.html";
 		String browserCommand = "cmd /c start \"\" \"" + htmlFilePath + "\"";
 
 		try {
