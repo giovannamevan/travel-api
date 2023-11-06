@@ -1,107 +1,98 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>FACOM Turismo - Confirmação</title>
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style-all1.css" />
-    <link rel="stylesheet" href="css/style-client_request.css" />
-    <link rel="preconnect" href="css/https://fonts.googleapis.com" />
-    <link rel="preconnect" href="css/https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>FACOM Turismo - Confirmação</title>
 
-  <body>
-    <header>
-      <div class="caixa">
-        <h1>
-          <a href="home.html"><img src="img/FACOM C.png" /></a>
-        </h1>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style-all1.css" />
+  <link rel="stylesheet" href="css/style-client_request.css" />
+  <link rel="preconnect" href="css/https://fonts.googleapis.com" />
+  <link rel="preconnect" href="css/https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet" />
+</head>
 
-        <h2>FACOM Turismo</h2>
+<body>
+  <header>
+    <div class="caixa">
+      <h1>
+        <a href="home.html"><img src="img/FACOM C.png" /></a>
+      </h1>
+
+      <h2>FACOM Turismo</h2>
+    </div>
+  </header>
+
+  <main>
+    <div class="caixa-gigante">
+      <img class="flight" src="img/Banner.png" />
+
+      <div class="caixa-main">
+        <p>Obrigado por comprar conosco!</p>
       </div>
-    </header>
+    </div>
 
-    <main>
-      <div class="caixa-gigante">
-        <img class="flight" src="img/Banner.png" />
+    <div class="botao-voltar">
+      <button onclick="goToHome()">Voltar</button>
+    </div>
 
-        <div class="caixa-main">
-          <p>Obrigado por comprar conosco!</p>
+    <div class="caixa-cima">
+      <div class="caixa-hotel">
+        <div class="texto-hotel">
+          <p id="hotel_title">Copabacana Palace</p>
+          <h1>Você selecionou o hotel:</h1>
         </div>
+        <img id="hotel_img" />
       </div>
 
-      <div class="botao-voltar">
-        <button onclick="goToHome()">Voltar</button>
+      <div class="caixa-preço">
+        <p id="desc_trip">Pedido feito para XX pessoas, no valor total de</p>
+        <h1 id="final_price">R$ XXX,XX</h1>
+      </div>
+    </div>
+
+    <div class="caixa-baixo">
+      <div class="caixa-passeio">
+        <div class="texto-passeio" id="texto-passeio">
+          <p id="tour_title">Soul Hostel Av. Paulista</p>
+          <h1>Você selecionou o passeio:</h1>
+        </div>
+        <img src="img/Copacabana Palace.png" id="tour_img" />
       </div>
 
-      <div class="caixa-cima">
-        <div class="caixa-hotel">
-          <div class="texto-hotel">
-            <p id="hotel_title">Copabacana Palace</p>
-            <h1>Você selecionou o hotel:</h1>
+      <div class="caixa-finalizacao">
+        <p>
+          Nos informe o numero de celular que você gostaria de receber toda
+          documentação:
+        </p>
+        <div class="botoes">
+          <div class="botao-telefone">
+            <input type="tel" id="telefone" class="input-padrao" required placeholder="(__) _____-____" />
           </div>
-          <img id="hotel_img" />
-        </div>
-
-        <div class="caixa-preço">
-          <p id="desc_trip">Pedido feito para XX pessoas, no valor total de</p>
-          <h1 id="final_price">R$ XXX,XX</h1>
-        </div>
-      </div>
-
-      <div class="caixa-baixo">
-        <div class="caixa-passeio">
-          <div class="texto-passeio" id="texto-passeio">
-            <p id="tour_title">Soul Hostel Av. Paulista</p>
-            <h1>Você selecionou o passeio:</h1>
-          </div>
-          <img src="img/Copacabana Palace.png" id="tour_img" />
-        </div>
-
-        <div class="caixa-finalizacao">
-          <p>
-            Nos informe o numero de celular que você gostaria de receber toda
-            documentação:
-          </p>
-          <div class="botoes">
-            <div class="botao-telefone">
-              <input
-                type="tel"
-                id="telefone"
-                class="input-padrao"
-                required
-                placeholder="(__) _____-____"
-              />
-            </div>
-            <div class="botao-enviar">
-              <button onclick="goToHome()">Enviar</button>
-            </div>
+          <div class="botao-enviar">
+            <button onclick="goToHome()">Enviar</button>
           </div>
         </div>
       </div>
-      <div class="tickets_div"></div>
-    </main>
+    </div>
+  </main>
 
-    <footer>
-      <div class="nomes">
-        <h3>Trabalho feito por:</h3>
-        <p>Isadora dos Reis Gonçalves (12021BSI243)</p>
-        <p>Giovanna Maria Alves Evangelista (12121BSI266)</p>
-        <p>Gabriel Freitas Santos (11821BSI264)</p>
-        <p>Henrick Oliveira de Souza (12121BSI237)</p>
-      </div>
-    </footer>
-    <!-- <p id="hotel_phrase"></p>
+  <footer>
+    <div class="nomes">
+      <h3>Trabalho feito por:</h3>
+      <p>Giovanna Maria Alves Evangelista (12121BSI266)</p>
+      <p>Gabriel Freitas Santos (11821BSI264)</p>
+      <p>Henrick Oliveira de Souza (12121BSI237)</p>
+    </div>
+  </footer>
+  <!-- <p id="hotel_phrase"></p>
       <p id="tour_phrase"></p>
       <p id="unity_ticket_phrase"></p>
       <p id="price_phrase"></p> -->
-  </body>
+</body>
+
 </html>
 
 <script>
@@ -127,9 +118,8 @@
     const hotelTitle = `${rightHotel.hostingName}`;
     const tourTitle = `${rightTour.tourName}`;
     const unityPricePhrase = `R$ ${priceToPay.toFixed(2)}`;
-    const personQuantityPhrase = `Pedido feito para ${personQuantity} ${
-      personQuantity == 1 ? "pessoa" : "pessoas"
-    }, no valor total de`;
+    const personQuantityPhrase = `Pedido feito para ${personQuantity} ${personQuantity == 1 ? "pessoa" : "pessoas"
+      }, no valor total de`;
 
     document.getElementById("hotel_title").innerHTML = hotelTitle;
     document.getElementById("tour_title").innerHTML = tourTitle;
@@ -142,26 +132,6 @@
     document.getElementById("desc_trip").innerHTML = personQuantityPhrase;
     document.getElementById("final_price").innerHTML = unityPricePhrase;
     document.getElementById("desc_trip").innerHTML = personQuantityPhrase;
-    const ticketsDiv = document.querySelector(".tickets_div");
-
-    for (let i = 0; i < personQuantity; i++) {
-      const newTicketDiv = document.createElement("div");
-      newTicketDiv.classList.add("ticket");
-
-      const titleElement = document.createElement("h3");
-      const priceElement = document.createElement("p");
-
-      const ticketIndex = i + 1;
-      const ticketPrice = rightTicket.ticketPrice;
-
-      priceElement.textContent = `Preço unitário: R$ ${ticketPrice.toFixed(2)}`;
-      titleElement.textContent = `Ticket ${ticketIndex}`;
-
-      newTicketDiv.appendChild(titleElement);
-      newTicketDiv.appendChild(priceElement);
-
-      ticketsDiv.appendChild(newTicketDiv);
-    }
   };
 
   async function buscarValoresAPI() {

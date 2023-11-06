@@ -1,164 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>FACOM Turismo</title>
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style-all.css" />
-    <link rel="stylesheet" href="css/style-home.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="caixa">
-        <h1>
-          <a href="home.html"><img src="img/FACOM C.png" /></a>
-        </h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>FACOM Turismo</title>
 
-        <h2>FACOM Turismo</h2>
-      </div>
-    </header>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style-all.css" />
+  <link rel="stylesheet" href="css/style-home.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet" />
+</head>
 
-    <main>
-      <img class="flight" src="img/Banner.png" />
+<body>
+  <header>
+    <div class="caixa">
+      <h1>
+        <a href="home.html"><img src="img/FACOM C.png" /></a>
+      </h1>
 
-      <form class="caixa-main" onsubmit="nextPage()">
-        <div class="caixa-grande">
-          <div class="caixa-menor">
-            <div class="caixa-datasaida">
-              <label for="date-input"> Data de saída:</label>
-              <input
-                id="date-input"
-                name="selected-date"
-                type="date"
-                min="2023-06-07"
-                max="2023-06-12"
-                required="true"
-              />
-            </div>
+      <h2>FACOM Turismo</h2>
+    </div>
+  </header>
 
-            <div class="caixa-localdesaida">
-              <label for="departure"> Local de saída:</label>
-              <select name="departure-select" id="departure" required="true">
-                <option>Uberlândia</option>
-                <option>Uberaba</option>
-                <option>Belo Horizonte</option>
-                <option>Brasília</option>
-              </select>
-            </div>
+  <main>
+    <img class="flight" src="img/Banner.png" />
 
-            <div class="caixa-destino">
-              <label for="destiny"> Destino:</label>
-              <select name="destiny-select" id="destiny" required="true">
-                <option>Curitiba</option>
-                <option>Recife</option>
-                <option>Rio de Janeiro</option>
-                <option>Salvador</option>
-                <option>Sao Paulo</option>
-              </select>
-            </div>
-
-            <div class="caixa-pessoas">
-              <label for="number-persons"> Número de pessoas: </label>
-              <input
-                min="1"
-                max="10"
-                type="number"
-                name="person-quantity"
-                id="number-persons"
-                required="true"
-              />
-            </div>
+    <form class="caixa-main" onsubmit="nextPage()">
+      <div class="caixa-grande">
+        <div class="caixa-menor">
+          <div class="caixa-datasaida">
+            <label for="date-input"> Data de saída:</label>
+            <input id="date-input" name="selected-date" type="date" min="2023-06-07" max="2023-06-17" required="true" />
           </div>
-          <div class="botao">
-            <button id="submit-button" type="submit" onclick="nextPage()">
-              Enviar
-            </button>
+
+          <div class="caixa-localdesaida">
+            <label for="departure"> Local de saída:</label>
+            <select name="departure-select" id="departure" required="true">
+              <option>Uberlândia</option>
+              <option>Uberaba</option>
+              <option>Belo Horizonte</option>
+              <option>Brasília</option>
+            </select>
+          </div>
+
+          <div class="caixa-destino">
+            <label for="destiny"> Destino:</label>
+            <select name="destiny-select" id="destiny" required="true">
+              <option>Curitiba</option>
+              <option>Recife</option>
+              <option>Rio de Janeiro</option>
+              <option>Salvador</option>
+              <option>Sao Paulo</option>
+            </select>
+          </div>
+
+          <div class="caixa-pessoas">
+            <label for="number-persons"> Número de pessoas: </label>
+            <input min="1" max="10" type="number" name="person-quantity" id="number-persons" required="true" />
           </div>
         </div>
-      </form>
-
-      <div class="destinos">
-        <div class="curitiba">
-          <img src="img/Curitiba.png" id="imagens-destinos" />
-          <p id="texto-destinos">
-            Curitiba é a capital do estado do Paraná, na região sul do Brasil. A
-            Torre Panorâmica, que tem um observatório em sua parte superior,
-            destaca-se na silhueta da cidade. Conhecida como centro cultural,
-            Curitiba abriga vários espaços para apresentações, como a Ópera de
-            Arame, uma estrutura de aço tubular com telhado transparente, e o
-            enorme Centro Cultural Teatro Guaíra, que apresenta uma programação
-            variada.
-          </p>
-        </div>
-
-        <div class="recife">
-          <img src="img/Recife.png" id="imagens-destinos" />
-          <p id="texto-destinos">
-            Recife, a capital do estado de Pernambuco, no nordeste do Brasil,
-            distingue-se pelos seus vários rios, pontes, ilhéus e penínsulas.
-            Recife Antigo, na própria ilha junto ao porto, é o centro histórico
-            da cidade antiga que data do século XVI. A sul, a popular Praia de
-            Boa Viagem é protegida por recifes e está ladeada de blocos de
-            apartamentos elevados, hotéis modernos e restaurantes.
-          </p>
-        </div>
-
-        <div class="riodejaneiro">
-          <img src="img/Rio de Janeiro.png" id="imagens-destinos" />
-          <p id="texto-destinos">
-            O Rio de Janeiro é uma grande cidade brasileira à beira-mar, famosa
-            pelas praias de Copacabana e Ipanema, pela estátua de 38 metros de
-            altura do Cristo Redentor, no topo do Corcovado, e pelo Pão de
-            Açúcar, um pico de granito com teleféricos até seu cume. A cidade
-            também é conhecida pelas grandes favelas. O empolgante Carnaval, com
-            carros alegóricos, fantasias extravagantes e sambistas, é
-            considerado o maior do mundo.
-          </p>
-        </div>
-
-        <div class="salvador">
-          <img src="img/Salvador.png" id="imagens-destinos" />
-          <p id="texto-destinos">
-            Salvador, a capital do estado da Bahia no nordeste do Brasil, é
-            conhecida pela arquitetura colonial portuguesa, pela cultura
-            afrobrasileira e pelo litoral tropical. O bairro do Pelourinho é seu
-            coração histórico, com vielas de paralelepípedo terminando em praças
-            grandes, prédios coloridos e igrejas barrocas, como São Francisco,
-            com trabalhos em madeira revestidos com ouro.
-          </p>
-        </div>
-
-        <div class="saopaulo">
-          <img src="img/Sao Paulo.png" id="imagens-destinos" />
-          <p id="texto-destinos">
-            São Paulo, centro financeiro do Brasil, está entre as cidades mais
-            populosas do mundo, com diversas instituições culturais e uma rica
-            tradição arquitetônica. Há prédios simbólicos como a catedral
-            neogótica, o Edifício Martinelli, um arranha-céu inaugurado em 1929,
-            e o Edifício Copan, com suas linhas curvas projetadas pelo arquiteto
-            modernista Oscar Niemeyer.
-          </p>
+        <div class="botao">
+          <button id="submit-button" type="submit" onclick="nextPage()">
+            Enviar
+          </button>
         </div>
       </div>
-    </main>
-    <footer>
-      <div class="nomes">
-        <h3>Trabalho feito por:</h3>
-        <p>Isadora dos Reis Gonçalves (12021BSI243)</p>
-        <p>Giovanna Maria Alves Evangelista (12121BSI266)</p>
-        <p>Gabriel Freitas Santos (11821BSI264)</p>
-        <p>Henrick Oliveira de Souza (12121BSI237)</p>
+    </form>
+
+    <div class="destinos">
+      <div class="curitiba">
+        <img src="img/Curitiba.png" id="imagens-destinos" />
+        <p id="texto-destinos">
+          Curitiba é a capital do estado do Paraná, na região sul do Brasil. A
+          Torre Panorâmica, que tem um observatório em sua parte superior,
+          destaca-se na silhueta da cidade. Conhecida como centro cultural,
+          Curitiba abriga vários espaços para apresentações, como a Ópera de
+          Arame, uma estrutura de aço tubular com telhado transparente, e o
+          enorme Centro Cultural Teatro Guaíra, que apresenta uma programação
+          variada.
+        </p>
       </div>
-    </footer>
-  </body>
+
+      <div class="recife">
+        <img src="img/Recife.png" id="imagens-destinos" />
+        <p id="texto-destinos">
+          Recife, a capital do estado de Pernambuco, no nordeste do Brasil,
+          distingue-se pelos seus vários rios, pontes, ilhéus e penínsulas.
+          Recife Antigo, na própria ilha junto ao porto, é o centro histórico
+          da cidade antiga que data do século XVI. A sul, a popular Praia de
+          Boa Viagem é protegida por recifes e está ladeada de blocos de
+          apartamentos elevados, hotéis modernos e restaurantes.
+        </p>
+      </div>
+
+      <div class="riodejaneiro">
+        <img src="img/Rio de Janeiro.png" id="imagens-destinos" />
+        <p id="texto-destinos">
+          O Rio de Janeiro é uma grande cidade brasileira à beira-mar, famosa
+          pelas praias de Copacabana e Ipanema, pela estátua de 38 metros de
+          altura do Cristo Redentor, no topo do Corcovado, e pelo Pão de
+          Açúcar, um pico de granito com teleféricos até seu cume. A cidade
+          também é conhecida pelas grandes favelas. O empolgante Carnaval, com
+          carros alegóricos, fantasias extravagantes e sambistas, é
+          considerado o maior do mundo.
+        </p>
+      </div>
+
+      <div class="salvador">
+        <img src="img/Salvador.png" id="imagens-destinos" />
+        <p id="texto-destinos">
+          Salvador, a capital do estado da Bahia no nordeste do Brasil, é
+          conhecida pela arquitetura colonial portuguesa, pela cultura
+          afrobrasileira e pelo litoral tropical. O bairro do Pelourinho é seu
+          coração histórico, com vielas de paralelepípedo terminando em praças
+          grandes, prédios coloridos e igrejas barrocas, como São Francisco,
+          com trabalhos em madeira revestidos com ouro.
+        </p>
+      </div>
+
+      <div class="saopaulo">
+        <img src="img/Sao Paulo.png" id="imagens-destinos" />
+        <p id="texto-destinos">
+          São Paulo, centro financeiro do Brasil, está entre as cidades mais
+          populosas do mundo, com diversas instituições culturais e uma rica
+          tradição arquitetônica. Há prédios simbólicos como a catedral
+          neogótica, o Edifício Martinelli, um arranha-céu inaugurado em 1929,
+          e o Edifício Copan, com suas linhas curvas projetadas pelo arquiteto
+          modernista Oscar Niemeyer.
+        </p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="nomes">
+      <h3>Trabalho feito por:</h3>
+      <p>Giovanna Maria Alves Evangelista (12121BSI266)</p>
+      <p>Gabriel Freitas Santos (11821BSI264)</p>
+      <p>Henrick Oliveira de Souza (12121BSI237)</p>
+    </div>
+  </footer>
+</body>
+
 </html>
 
 <script>
@@ -167,7 +152,7 @@
     let citySaida = document.getElementById("departure");
     let selectedCity = citySaida.value;
     if (selectedCity !== "Uberlândia") {
-      alert("No momento, só temos passagens saindo de Uberlândia");
+      alert("No momento, só temos viagens saindo de Uberlândia");
       return false;
     }
     const place = document.getElementById("destiny").value;
