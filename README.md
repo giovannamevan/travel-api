@@ -7,7 +7,7 @@
 - O **FACOM Turismo** é um sistema de agência de viagens em constante desenvolvimento. O usuário escolhe a origem (no momento, suporta apenas para Uberlândia) e um destino. Assim que escolhido, o sistema oferta hotéis e passeios no itinerário final. O usuário pode acatar nossa sugestão ou pedir para selecionar manualmente. Por fim, passamos os detalhes finais ao usuário através do telefone. 
 - Desenvolvemos este software de agência de viagens para transformar os sonhos das pessoas em realidade. Acreditamos que todos merecem momentos de lazer e descanso. Queremos facilitar o acesso a destinos incríveis, conectando as pessoas com experiências memoráveis. Nossa motivação é tornar o planejamento de viagens uma jornada emocionante e sem complicações, proporcionando a todos a oportunidade de explorar o mundo e criar lembranças inesquecíveis.
 
-![xNx9vEU](https://github.com/gabrielfresan7/Teste/assets/71043961/abdf8566-f64c-48b5-986c-6e951790bbc2)
+![gif](https://github.com/giovannamevan/travel-api/assets/71043961/d710be09-4ccf-4a42-b551-e6cc842a32d8)
 
 ## Padrões de projeto
 ### Injeção de Dependência
