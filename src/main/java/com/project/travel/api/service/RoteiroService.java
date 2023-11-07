@@ -9,13 +9,12 @@ import com.project.travel.api.repositories.RoteiroRepository;
 
 @Service
 public class RoteiroService {
-		@Autowired
-		RoteiroRepository roteiroRepository;
-		
-		@Transactional
-		public void saveRoteiro(RoadMapDTO roteiroDTO) {
-			roteiroRepository.save(new RoadMap (roteiroDTO));
-		}
-		
-		
+	@Autowired
+	RoteiroRepository roteiroRepository;
+
+	@Transactional
+	public void saveRoteiro(RoadMapDTO roteiroDTO) {
+		roteiroRepository.save(new RoadMap(roteiroDTO));
+	}
+
 }
