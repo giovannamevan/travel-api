@@ -1,11 +1,5 @@
 package com.project.travel.api.controllers;
 
-
-import java.util.Iterator;
-
-import java.util.Random;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,26 +16,26 @@ import com.project.travel.api.service.RoteiroService;
 @RestController
 @RequestMapping("clients")
 public class ClientRequestController {
-	
-		@Autowired
-		private PlaceService placeService;
-		
-		@GetMapping(value = "/roadmap/{city}")
-		public ResponseEntity<PlaceDTO> findRoadMap (@PathVariable  String city){
-			return ResponseEntity.ok(placeService.getRandomRoadMap(city));
-		}
-		
-		@GetMapping("/all/{city}")
-		public ResponseEntity<PlaceDTO> findPlaceByCity(@PathVariable String city) {
-			   return ResponseEntity.ok(placeService.findPlaceByCity(city));
-		}
-		
-		@Autowired
-		RoteiroService roteiroService;
-		
-		@PostMapping(value = "/roteiro")
-		public void postRoteiro(@RequestBody RoadMapDTO roteiroDTO) {
-			  roteiroService.saveRoteiro(roteiroDTO);
-		}
-		
+
+	@Autowired
+	private PlaceService placeService;
+
+	@GetMapping(value = "/roadmap/{city}")
+	public ResponseEntity<PlaceDTO> findRoadMap(@PathVariable String city) {
+		return ResponseEntity.ok(placeService.getRandomRoadMap(city));
+	}
+
+	@GetMapping("/all/{city}")
+	public ResponseEntity<PlaceDTO> findPlaceByCity(@PathVariable String city) {
+		return ResponseEntity.ok(placeService.findPlaceByCity(city));
+	}
+
+	@Autowired
+	RoteiroService roteiroService;
+
+	@PostMapping(value = "/roteiro")
+	public void postRoteiro(@RequestBody RoadMapDTO roteiroDTO) {
+		roteiroService.saveRoteiro(roteiroDTO);
+	}
+
 }
