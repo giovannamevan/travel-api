@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.project.travel.api.entities.RoadMap;
 
-public interface RoteiroRepository extends JpaRepository<RoadMap, Long>{
-		
+public interface RoteiroRepository extends JpaRepository<RoadMap, Long> {
+
 }

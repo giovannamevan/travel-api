@@ -2,15 +2,10 @@ package com.project.travel.api.entities;
 
 import java.math.BigDecimal;
 
-import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.project.travel.api.DTO.RoadMapDTO;
@@ -18,131 +13,125 @@ import com.project.travel.api.DTO.RoadMapDTO;
 @Entity
 @Table(name = "tb_roadmaps")
 public class RoadMap {
-		
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private Long id;
-		
-		private String departionDate;
-		private int peopleNumber;
-		private BigDecimal finalPrice;
-		private String localName;
-		private String hostingName;
-		private BigDecimal hostingPrice;
-		private String tourName;
-		private BigDecimal tourPrice;
-		private BigDecimal ticketPrice;
-		private String ticketCompany;
-		
-		
-		public RoadMap () {
-			
-		}
-		
-		public RoadMap (RoadMapDTO DTO) {
-			 this.id = DTO.getId();
-			 this.departionDate = DTO.getDepartionDate();
-			 this.peopleNumber = DTO.getPeopleNumber();
-			 this.finalPrice = DTO.getFinalPrice();
-			 this.localName = DTO.getLocalName();
-			 this.hostingName = DTO.getHostingName();
-			 this.hostingPrice = DTO.getHostingPrice();
-			 this.tourName = DTO.getTourName();
-			 this.tourPrice = DTO.getTourPrice();
-			 this.ticketPrice = DTO.getTicketPrice();
-			 this.ticketCompany = DTO.getTicketCompany();
-		}
-		
 
-		public Long getId() {
-			return id;
-		}
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+	private String departionDate;
+	private int peopleNumber;
+	private BigDecimal finalPrice;
+	private String localName;
+	private String hostingName;
+	private BigDecimal hostingPrice;
+	private String tourName;
+	private BigDecimal tourPrice;
+	private BigDecimal ticketPrice;
+	private String ticketCompany;
 
-		public String getDepartionDate() {
-			return departionDate;
-		}
+	public RoadMap() {
+	}
 
-		public void setDepartionDate(String departionDate) {
-			this.departionDate = departionDate;
-		}
+	public RoadMap(RoadMapDTO DTO) {
+		this.id = DTO.getId();
+		this.departionDate = DTO.getDepartionDate();
+		this.peopleNumber = DTO.getPeopleNumber();
+		this.finalPrice = DTO.getFinalPrice();
+		this.localName = DTO.getLocalName();
+		this.hostingName = DTO.getHostingName();
+		this.hostingPrice = DTO.getHostingPrice();
+		this.tourName = DTO.getTourName();
+		this.tourPrice = DTO.getTourPrice();
+		this.ticketPrice = DTO.getTicketPrice();
+		this.ticketCompany = DTO.getTicketCompany();
+	}
 
-		public int getPeopleNumber() {
-			return peopleNumber;
-		}
+	public Long getId() {
+		return id;
+	}
 
-		public void setPeopleNumber(int peopleNumber) {
-			this.peopleNumber = peopleNumber;
-		}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-		public BigDecimal getFinalPrice() {
-			return finalPrice;
-		}
+	public String getDepartionDate() {
+		return departionDate;
+	}
 
-		public void setFinalPrice(BigDecimal finalPrice) {
-			this.finalPrice = finalPrice;
-		}
+	public void setDepartionDate(String departionDate) {
+		this.departionDate = departionDate;
+	}
 
-		public String getLocalName() {
-			return localName;
-		}
+	public int getPeopleNumber() {
+		return peopleNumber;
+	}
 
-		public void setLocalName(String localName) {
-			this.localName = localName;
-		}
+	public void setPeopleNumber(int peopleNumber) {
+		this.peopleNumber = peopleNumber;
+	}
 
-		public String getHostingName() {
-			return hostingName;
-		}
+	public BigDecimal getFinalPrice() {
+		return finalPrice;
+	}
 
-		public void setHostingName(String hostingName) {
-			this.hostingName = hostingName;
-		}
+	public void setFinalPrice(BigDecimal finalPrice) {
+		this.finalPrice = finalPrice;
+	}
 
-		public BigDecimal getHostingPrice() {
-			return hostingPrice;
-		}
+	public String getLocalName() {
+		return localName;
+	}
 
-		public void setHostingPrice(BigDecimal hostingPrice) {
-			this.hostingPrice = hostingPrice;
-		}
+	public void setLocalName(String localName) {
+		this.localName = localName;
+	}
 
-		public String getTourName() {
-			return tourName;
-		}
+	public String getHostingName() {
+		return hostingName;
+	}
 
-		public void setTourName(String tourName) {
-			this.tourName = tourName;
-		}
+	public void setHostingName(String hostingName) {
+		this.hostingName = hostingName;
+	}
 
-		public BigDecimal getTourPrice() {
-			return tourPrice;
-		}
+	public BigDecimal getHostingPrice() {
+		return hostingPrice;
+	}
 
-		public void setTourPrice(BigDecimal tourPrice) {
-			this.tourPrice = tourPrice;
-		}
+	public void setHostingPrice(BigDecimal hostingPrice) {
+		this.hostingPrice = hostingPrice;
+	}
 
-		public BigDecimal getTicketPrice() {
-			return ticketPrice;
-		}
+	public String getTourName() {
+		return tourName;
+	}
 
-		public void setTicketPrice(BigDecimal ticketPrice) {
-			this.ticketPrice = ticketPrice;
-		}
+	public void setTourName(String tourName) {
+		this.tourName = tourName;
+	}
 
-		public String getTicketCompany() {
-			return ticketCompany;
-		}
+	public BigDecimal getTourPrice() {
+		return tourPrice;
+	}
 
-		public void setTicketCompany(String ticketCompany) {
-			this.ticketCompany = ticketCompany;
-		}
-		
-		
+	public void setTourPrice(BigDecimal tourPrice) {
+		this.tourPrice = tourPrice;
+	}
 
-				
+	public BigDecimal getTicketPrice() {
+		return ticketPrice;
+	}
+
+	public void setTicketPrice(BigDecimal ticketPrice) {
+		this.ticketPrice = ticketPrice;
+	}
+
+	public String getTicketCompany() {
+		return ticketCompany;
+	}
+
+	public void setTicketCompany(String ticketCompany) {
+		this.ticketCompany = ticketCompany;
+	}
+
 }
