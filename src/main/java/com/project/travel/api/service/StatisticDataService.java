@@ -1,16 +1,14 @@
 package com.project.travel.api.service;
 
 import java.util.Iterator;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.HashMap;
 import com.project.travel.api.DTO.StatisticDataDTO;
 import com.project.travel.api.entities.RoadMap;
 import com.project.travel.api.repositories.RoteiroRepository;
+import java.util.HashMap;
 
 @Service
 public class StatisticDataService {
