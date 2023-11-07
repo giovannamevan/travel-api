@@ -1,6 +1,6 @@
 # FACOM TURISMO
 
-![FACOM Cx1,5](https://github.com/gabrielfresan7/Teste/assets/71043961/4f159577-07b5-4b2b-89d6-76ede90e63d2)
+![FACOM Cx1,5](https://github.com/giovannamevan/travel-api/assets/71043961/39e0cebb-1435-4d9f-a6b0-7a32b262ae6b)
 
 
 ## Introdução
