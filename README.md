@@ -197,7 +197,7 @@ public class ClientRequestController {
 
 O padrão de projeto **DTO (Data Transfer Object)** e **TO (Transfer Object)** é amplamente empregado na programação Java, incluindo em projetos baseados no Spring Boot, para facilitar o transporte de dados entre diferentes componentes de um sistema, entre diferentes instâncias ou processos de um sistema distribuído e até entre sistemas diferentes, usando serialização. No contexto do Spring Boot, a ideia fundamental por trás desse padrão consiste em agrupar um conjunto de atributos em uma classe simples, otimizando assim a comunicação entre esses componentes.
 
-![ih](https://github.com/gabrielfresan7/Teste/assets/71043961/21cc0890-80e3-4b25-b730-42310eeadc02)
+![DTO](https://github.com/giovannamevan/travel-api/assets/71043961/37f6904f-4d0f-4169-9c27-dbf21862ddc4)
 
 No Spring Boot, o uso de DTO/TO se torna particularmente valioso em chamadas remotas ou em cenários onde a comunicação entre componentes é necessária. Passar cada atributo individualmente seria ineficiente, e, da mesma forma, passar uma entidade mais complexa, como uma entidade JPA, pode não ser a solução ideal. Além disso, muitas vezes os dados usados na comunicação não correspondem exatamente aos atributos do modelo de dados da aplicação. Nesse contexto, o uso de DTO/TO permite criar classes que fornecem exatamente o que é necessário para um processo específico no ambiente Spring Boot.
 
